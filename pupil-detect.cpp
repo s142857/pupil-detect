@@ -40,6 +40,10 @@ int main(int argc, char** argv)
 		{
 			double area1 = (CV_PI * std::pow(radius, 2) * 100)/(h*w); //calculate area of pupil (for future release
 			printf("\npupil area %lfpercent of total area \n",area1); //print area of pupil
+			std::ostringstream strs;
+			strs << (radius*2);
+			std::string str = strs.str();
+			cv::putText(src, str, cv::Point(50, 50), CV_FONT_HERSHEY_SIMPLEX, 1, CV_RGB(100,255,0), 4);
 			cv::circle(src, cv::Point(rect.x + radius, rect.y + radius), radius, CV_RGB(100,255,0), 2);//overlay a circle on pupil
 			if (area1 > 5){
 				printf("pupils are dilated \n \n");
