@@ -43,10 +43,10 @@ int main(int argc, char** argv)
 			std::ostringstream strs;
 			strs << (radius*2);
 			std::string str = strs.str();
-			cv::putText(src, str, cv::Point(50, 50), CV_FONT_HERSHEY_SIMPLEX, 1, CV_RGB(100,255,0), 4);
+			cv::putText(src, str, cv::Point(h/10, w/10), CV_FONT_HERSHEY_SIMPLEX, 1, CV_RGB(100,255,0), 4);
 			cv::circle(src, cv::Point(rect.x + radius, rect.y + radius), radius, CV_RGB(100,255,0), 2);//overlay a circle on pupil
 			if (area1 > 5){
-				printf("pupils are dilated \n \n");
+				cv::putText(src, "Pupil is dilated", cv::Point(h/10, w/10+40), CV_FONT_HERSHEY_SIMPLEX, 1, CV_RGB(100,255,0), 1);
 			}
 			
 		}
