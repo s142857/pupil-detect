@@ -64,7 +64,7 @@ CV_RETR_EXTERNAL, // retrieve the external contours
 CV_CHAIN_APPROX_NONE, Point(0, 0)); // all pixels of each contours
 
 // Draw black contours on a white image
-Mat result(threshold_output.size(), CV_8U, Scalar(255));
+Mat result(threshold_output.size(), CV_8U, Scalar(255));//we create a mat for debugging, to check the contours. 
 drawContours(result, contours, -1, // draw all contours
 Scalar(0), // in black
 2); // with a thickness of 2
